@@ -3,13 +3,13 @@ package com.BridgeLabz;
 import java.util.Scanner;
 
 public class LineComparison {
-    int x1, x2, x3, x4, y1, y2, y3, y4;
+    int x1, y1, x2, y2, x3, y3, x4, y4;
     double line1, line2;
     Scanner scanner = new Scanner(System.in);
 
     //To Get Co-Ordinates oF Line1
     public double lengthOfLine1() {
-        System.out.println("Enter Cartesian Co-ordinates for first line");
+        System.out.println("Enter Cartesian Co-ordinatesvfor first line");
         System.out.print("Enter the value of x1 : ");
         x1 = scanner.nextInt();
         System.out.print("Enter the value of x2 : ");
@@ -25,14 +25,14 @@ public class LineComparison {
     //To Get Co-Ordinates oF Line2
     public double lengthOfLine2() {
         System.out.println();
-        System.out.println("Enter Cartesian Co-ordinates for Second line");
-        System.out.print("Enter the value of x3 : ");
+        System.out.println("Enter Cartesian Co-ordinatesvfor first line");
+        System.out.print("Enter the value of x1 : ");
         x1 = scanner.nextInt();
-        System.out.print("Enter the value of x4 : ");
+        System.out.print("Enter the value of x2 : ");
         x2 = scanner.nextInt();
-        System.out.print("Enter the value of y3 : ");
+        System.out.print("Enter the value of y1 : ");
         y1 = scanner.nextInt();
-        System.out.print("Enter the value of y4 : ");
+        System.out.print("Enter the value of y2 : ");
         y2 = scanner.nextInt();
         line2 = Math.sqrt(Math.pow((x2 - x1), 2)) + Math.pow((y2 - y1), 2);
         System.out.println("Length of the line1 is : " + line2);
@@ -48,11 +48,24 @@ public class LineComparison {
         }
         else {
             System.out.println("The length of both the Lines are Not Equal");
+            System.out.println("Calling CompareTo Method");
+        }
+    }
+    //Comparing Two Lines to Check Which Line is Greater
+    public void CompareTo() {
+        System.out.println();
+        if (line1Length > line2Length) {
+            System.out.println("The length of Line1 is greater than Line2 ");
+        } else if (line2Length > line1Length){
+            System.out.println("The length of Lines2 is greater than Line1");
+        }else {
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
         LineComparison Line = new LineComparison();
         Line.EqualTo();
+        Line.CompareTo();
     }
 }
